@@ -28,6 +28,7 @@
 
 import SwiftUI
 
+@available(macOS 10.15, *)
 @available(iOS 13.0, *)
 public class RemoteImageFetcher: ObservableObject {
   @Published var imageData = Data()
@@ -56,5 +57,10 @@ public class RemoteImageFetcher: ObservableObject {
   public func getUrl() -> URL {
     return url
   }
+    
+    public func purge() {
+      imageData = Data()
+    }
+
 }
 
